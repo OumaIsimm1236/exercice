@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ma page avec des carrés</title>
+  <style>
+    .carreau {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <button onclick="ajouterCarreau()">Ajouter carré</button>
+  <button onclick="supprimerCarreau()">Supprimer carré</button>
+
+  <script>
+    function ajouterCarreau() {
+      var container = document.getElementById('container');
+      var newCarreau = document.createElement('div');
+      newCarreau.classList.add('carreau');
+      container.appendChild(newCarreau);
+    }
+
+    function supprimerCarreau() {
+      var container = document.getElementById('container');
+      var carreaux = container.getElementsByClassName('carreau');
+      if (carreaux.length > 0) {
+        container.removeChild(carreaux[carreaux.length - 1]);
+      }
+    }
+  </script>
+</body>
+</html>
+
